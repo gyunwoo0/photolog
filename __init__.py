@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, url_for
 
 
 def print_setting(config):
+    """hi."""
     print "================================================"
     print "SETTINGS for PHOTOLOG APPLICATION"
     print "================================================"
@@ -14,21 +15,25 @@ def print_setting(config):
 
 
 def not_found(error):
+    """hi."""
     return render_template("404.html"), 404
 
 
 def server_error(error):
+    """hi."""
     err_msg = str(error)
     return render_template("500.html", err_msg=err_msg), 500
 
 
 def url_for_other_page(page):
+    """hi."""
     args = request.view_args.copy()
     args['page'] = page
     return url_for(request.endpoint, **args)
 
 
 def create_app(config_filepath="resource/config.cfg"):
+    """hi."""
     photolog_app = Flask(__name__)
 
     from photolog.photolog_config import PhotologConfig
